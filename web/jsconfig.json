@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "three/three.js",
+        "scene.js",
+        "three/three.d.ts"
+
+    ]
+}

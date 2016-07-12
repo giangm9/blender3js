@@ -1,3 +1,4 @@
 *.pyc
 exporter/io_three/__pycache__/
 .vscode
+node_modules
