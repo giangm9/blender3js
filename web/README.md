@@ -1,9 +1,11 @@
 Last edit : Jul 28 2016
 
-1. README 
+I. README 
+
 	File readme này được dùng cho tool webrendere, 1 công cụ render json scene ra cảnh 3d 
 
-2. Cài đặt 
+II. CÀI ĐẶT 
+ 
     1. Requirement 
         + 1 công cụ tạo web server ( bên dưới sẽ hướng dẫn với python)
         + webbrowser hỗ trợ webgl (recommend Firefox, Chrome)

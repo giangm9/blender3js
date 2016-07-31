@@ -43,6 +43,8 @@ function animate() {
     render();
 }
 
+
+
 function render() {
 
     camera.position.x = 5;
