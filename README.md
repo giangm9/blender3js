@@ -1,4 +1,4 @@
-Last edit : Jul 30 2016
+Last edit : Aug 2 2016
 
 English version not available (comming soon)
 
@@ -14,11 +14,25 @@ I. README
 	
 II. TỔ CHỨC THƯ MỤC
 	
-	Gồm có 3 thư mục chính 
+	Gồm có 2 thư mục chính 
 	1, exporter
 		chứa tool exporter, đọc exporter/README.md để xem hướng dẫn
-	2, resources
-		chứa các resources dùng chung cho 2 công cụ 
-	3, web
-		chứa phần lưu trang web, đọc web/README.md để biết thêm chi tiết 
+	2, res
+		chứa các tài nguyên được export ra từ exporter
+
+III. Cài đặt 
+
+	Online :
+		Khi push :
+			push orign gh-pages
+		sau đó vào địa chỉ : 
+			https://giangm9.github.io/blender3js/
+	
+	Local: 
+		Đơn giản là dùng python : 
+			cd {thư mục chứa}
+			python -m SimpleHTTPServer 8000
+		Mở trình duyệt, gõ địa chỉ : 
+			localhost:8000
+	
 
