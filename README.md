@@ -36,7 +36,9 @@ contact : giangm9@gmail.com
 
 			cd thư/mục/chứa
 			python -m SimpleHTTPServer 8000
-	* Mở trình duyệt,vào địa chỉ <a>localhost:8000</a>
+	* Mở trình duyệt,vào địa chỉ
+	
+			localhost:8000
 
 * Xem Online :
 
