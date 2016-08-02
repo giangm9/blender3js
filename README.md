@@ -4,35 +4,41 @@ English version not available (comming soon)
 
 contact : giangm9@gmail.com
 
-I. README 
-	
-	File readme này được dùng cho tool blender exporter, 1 công cụ chuyển từ 
-	1 blender scene ra 1 threejs scene.	
+<h3>I. README </h3>
 
-	Công cụ  render sẽ được đi kèm trong này
+* File readme này được dùng cho blender3js công cụ render 1 cảnh blender 
+* Exporter được kèm theo trong này
 	
+<h3>II. TỔ CHỨC THƯ MỤC</h3>
 	
-II. TỔ CHỨC THƯ MỤC
-	
-	Gồm có 2 thư mục chính 
-	1, exporter
-		chứa tool exporter, đọc exporter/README.md để xem hướng dẫn
-	2, res
-		chứa các tài nguyên được export ra từ exporter
+* Gồm có 3 thư mục chính
 
-III. Cài đặt 
+	* ./exporter : chứa tool exporter, đọc exporter/README.md để xem hướng dẫn
 
-	Online :
-		Khi push :
-			push orign gh-pages
-		sau đó vào địa chỉ : 
-			https://giangm9.github.io/blender3js/
-	
-	Local: 
-		Đơn giản là dùng python : 
-			cd {thư mục chứa}
+	* ./res : chứa các tài nguyên được export ra từ exporter
+
+	* ./js : javascript sẽ được đặt ở đây 
+
+
+
+<h3>III. CÀI ĐẶT</h3>
+
+
+* Tải git về: <a> https://git-scm.com/ </a>
+
+* Clone source code :
+
+		git clone https://github.com/giangm9/blender3js.git\
+
+* Chạy ở localhost
+	* Cài đặt python 2.7 (hoặc 1 công cụ tạo webhost)
+	* Chạy ở localhost (với python):
+
+			cd thư/mục/chứa
 			python -m SimpleHTTPServer 8000
-		Mở trình duyệt, gõ địa chỉ : 
-			localhost:8000
-	
+	* Mở trình duyệt,vào địa chỉ <a>localhost:8000</a>
 
+* Xem Online :
+
+	Vào địa chỉ <a>https://giangm9.github.io/blender3js/</a> để xem trang web 
+ 			
