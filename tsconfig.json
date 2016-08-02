@@ -1,0 +1,11 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es3",
+        "sourceMap": true
+    },
+    "files": [
+        "./js/DollScene.ts"
+    ]
+
+}
