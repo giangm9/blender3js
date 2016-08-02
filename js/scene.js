@@ -28,7 +28,7 @@ function init() {
     container.appendChild(renderer.domElement);
 
     var loader = new THREE.ObjectLoader();
-    loader.load("../res/simple.json", function(loadedScene) {
+    loader.load("res/simple.json", function(loadedScene) {
         scene = loadedScene;
         scene.add(camera);
         scene.fog = new THREE.Fog(0xffffff, 2000, 10000);
