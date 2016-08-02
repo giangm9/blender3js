@@ -11,6 +11,8 @@ animate();
 function init() {
     container = document.getElementById('container');
     camera = new THREE.PerspectiveCamera(30, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000);
+    camera.position.x = 5;
+    camera.position.y = 6;
     camera.position.z = 10;
     scene = new THREE.Scene();
 
@@ -47,8 +49,7 @@ function animate() {
 
 function render() {
 
-    camera.position.x = 5;
-    camera.position.y = 6;
+    camera.position.x -= .05;
     camera.lookAt(scene.position);
     renderer.render(scene, camera);
 }
