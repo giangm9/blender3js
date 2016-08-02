@@ -2,5 +2,3 @@
 exporter/io_three/__pycache__/
 .vscode
 node_modules
-js/*.js
-js/*.js.map
