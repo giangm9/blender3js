@@ -1,57 +1,54 @@
 
-BLENDER3JS
+# BLENDER3JS
 
-==========
-
-Last edit : Aug 2 2016
 
 English version not available (comming soon)
 
 contact : giangm9@gmail.com
 
-I. README
+## I. README
 
-* File readme này được dùng cho blender3js công cụ render 1 cảnh blender 
-* Exporter được kèm theo trong này
+- File readme này được dùng cho blender3js công cụ render 1 cảnh blender
+- Exporter được kèm theo trong này
 
-II. TỔ CHỨC THƯ MỤC
+## II. TỔ CHỨC THƯ MỤC
 
-* Gồm có 3 thư mục chính
+- Gồm có 3 thư mục chính
 
-  * exporter : chứa tool exporter, đọc exporter/README.md để xem hướng dẫn
+  - exporter : chứa tool exporter, đọc exporter/README.md để xem hướng dẫn
 
-  * res : chứa các tài nguyên được export ra từ exporter
+  - res : chứa các tài nguyên được export ra từ exporter
 
-  * js : javascript sẽ được đặt ở đây
-
-
-III. CÀI ĐẶT
+  - js : javascript sẽ được đặt ở đây
 
 
-* Tải git về:  [git-scm.com](https://git-scm.com/)
+## III. CÀI ĐẶT
 
-* Clone source code :
+
+- Tải git về:  [git-scm.com](https://git-scm.com/)
+
+- Clone source code :
 
     `git clone https://github.com/giangm9/blender3js.git\`
 
-* Chạy ở localhost
-  * Cài đặt python 2.7 (hoặc 1 công cụ tạo webhost)
-  * Chạy ở localhost (với python):
+- Chạy ở localhost
+  - Cài đặt python 2.7 (hoặc 1 công cụ tạo webhost)
+  - Chạy ở localhost (với python):
 
     `cd thư/mục/chứa`
 
     `python -m SimpleHTTPServer 8000`
-  * Mở trình duyệt,vào địa chỉ
+  - Mở trình duyệt,vào địa chỉ
 
     `localhost:8000`
 
-* Xem Online :
+- Xem Online :
 
   Vào địa chỉ
-  [giangm9.github.io/blender3js](https://giangm9.github.io/blender3js/) 
-  để xem trang web
+  > [giangm9.github.io/blender3js](https://giangm9.github.io/blender3js/)
+  > để xem trang web
 
-IV. SỬ DỤNG TYPESCRIPT
+## IV. SỬ DỤNG TYPESCRIPT
 
 Để có thể mở rộng và lập trình dễ dàng, project sẽ được viết bằng ngôn
 ngữ TypeScript.
@@ -60,14 +57,14 @@ TypeScript sẽ được biên dịch ra javascript
 
 Để cho các thành viên khác tiện theo dõi, các file như .js .js.map sẽ vẫn được commit lên
 
-V. CÀI ĐẶT TYPESCRIPT
+## V. CÀI ĐẶT TYPESCRIPT
 
-* Cài đặt [nodejs](https://nodejs.org/)
-* Cài đặt TypeScript compiler
+- Cài đặt [nodejs](https://nodejs.org/)
+- Cài đặt TypeScript compiler
 
     `npm install -g typescript`
 
-* Biên dịch:
+- Biên dịch:
 
   `cd thư/mục/chứa`
 
