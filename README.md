@@ -47,25 +47,3 @@ contact : giangm9@gmail.com
   Vào địa chỉ
   > [giangm9.github.io/blender3js](https://giangm9.github.io/blender3js/)
   > để xem trang web
-
-## IV. SỬ DỤNG TYPESCRIPT
-
-Để có thể mở rộng và lập trình dễ dàng, project sẽ được viết bằng ngôn
-ngữ TypeScript.
-
-TypeScript sẽ được biên dịch ra javascript
-
-Để cho các thành viên khác tiện theo dõi, các file như .js .js.map sẽ vẫn được commit lên
-
-## V. CÀI ĐẶT TYPESCRIPT
-
-- Cài đặt [nodejs](https://nodejs.org/)
-- Cài đặt TypeScript compiler
-
-    `npm install -g typescript`
-
-- Biên dịch:
-
-  `cd thư/mục/chứa`
-
-  `tsc -p .`
