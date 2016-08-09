@@ -1,4 +1,6 @@
-/// <reference path="three/three.d.ts" />
+/// <reference path="three/three.js" />
+
+
 var PuppetScene = (function () {
     function PuppetScene() {
         var _this = this;
@@ -35,4 +37,4 @@ var PuppetScene = (function () {
     return PuppetScene;
 }());
 var s = new PuppetScene();
-//# sourceMappingURL=PuppetScene.js.map
+
