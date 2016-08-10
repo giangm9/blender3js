@@ -8,6 +8,7 @@ var Scene = function(){
 
     this.container = document.getElementById("container");
     this.camera = new THREE.PerspectiveCamera(30, this.width / this.height);
+    console.log(this.camera.position);    
     this.camera.position.x = 5;
     this.camera.position.y = 6;
     this.camera.position.z = 10;
