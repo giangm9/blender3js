@@ -13,14 +13,38 @@ var Control = function(owner){
 Control.prototype.init = function(){
     this.main = this.owner.getMain();
     this.camera = this.main.camera;
-    document.addEventListener( 'mousemove',
-        this.onDocumentMouseMove, false );
+    this.touching = false;
+    document.addEventListener( 'mousedown',
+        this.onDocumentMouseBegin.bind(this), false );
+
+    document.addEventListener( "mousemove",
+        this.onDocumentMouseMove.bind(this), false);
+
+    var exitEvents = ["mouseup", "mouseout", "mouseleave"];
+    for (var i = 0; i < exitEvents.length; ++i){
+        document.addEventListener( exitEvents[i],
+            this.onDocumentMouseEnd.bind(this), false);
+    }
+
 }
 
 Control.prototype.update = function(){
 
 }
 
-Control.prototype.onDocumentMouseMove = function(){
+Control.prototype.onDocumentMouseBegin = function(){
+    this.touching = true;
+}
 
+
+Control.prototype.onDocumentMouseMove = function(event){
+    if (this.touching){
+        console.log(event);
+        this.camera.position.x += .05;
+    }
+
+}
+
+Control.prototype.onDocumentMouseEnd = function(){
+    this.touching = false;
 }
