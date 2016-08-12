@@ -1,14 +1,13 @@
-/// <reference path="three/three.js" />
+/**
+ * load main scene here
+ */
 
-
-
-var Scene = function(){
+var LoadMain = function(){
     this.width = window.innerWidth;
     this.height = window.innerHeight;
 
     this.container = document.getElementById("container");
     this.camera = new THREE.PerspectiveCamera(30, this.width / this.height);
-    console.log(this.camera.position);
     this.camera.position.x = 5;
     this.camera.position.y = 6;
     this.camera.position.z = 10;
@@ -21,20 +20,17 @@ var Scene = function(){
     this.container.appendChild(this.renderer.domElement);
 
     var loader = new THREE.ObjectLoader();
-    loader.load("res/simple.json", (function(loadedScene){
+    loader.load("res/steve.json", (function(loadedScene){
         this.scene =  loadedScene;
         this.scene.add(this.camera);
     }).bind(this));
 
-    this.render();
 }
 
-
-Scene.prototype.render = function(){
-    requestAnimationFrame(this.render.bind(this));
+LoadMain.prototype.update = function(){
     this.camera.position.x -= .05;
     this.camera.lookAt(this.scene.position);
     this.renderer.render(this.scene, this.camera);
-};
+}
 
-var scene = new Scene();
+
