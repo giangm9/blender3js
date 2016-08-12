@@ -1,5 +1,7 @@
 {
     "files": [
-        "js/PupperScene.js"
+        "js/control.js",
+        "js/loadmain.js",
+        "js/scene.js"
     ]
 }

@@ -3,6 +3,7 @@
  */
 
 var LoadMain = function(){
+    this.name = "main";
     this.width = window.innerWidth;
     this.height = window.innerHeight;
 
@@ -18,7 +19,7 @@ var LoadMain = function(){
     this.renderer.setSize(this.width, this.height);
     this.renderer.domElement.style.position = "relative";
     this.container.appendChild(this.renderer.domElement);
-
+    camera = this.camera;
     var loader = new THREE.ObjectLoader();
     loader.load("res/steve.json", (function(loadedScene){
         this.scene =  loadedScene;
@@ -28,7 +29,7 @@ var LoadMain = function(){
 }
 
 LoadMain.prototype.update = function(){
-    this.camera.position.x -= .05;
+    //this.camera.position.x -= .05;
     this.camera.lookAt(this.scene.position);
     this.renderer.render(this.scene, this.camera);
 }
