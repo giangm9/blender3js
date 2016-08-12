@@ -1,9 +1,11 @@
-/// <reference path="animation.js" />
-/// <reference path="character.js" />
+/// <reference path="winresize.js" />
+/// <reference path="control.js" />`
+/// <reference path="loadmain.js" />
 
 
 var Scene = function(){
-    this.seeds = [LoadMain, Control];
+    this.seeds = [LoadMain, Control,
+        WinResize];
 
     this.modules = [];
     for (var i = 0; i < this.seeds.length; ++i){
