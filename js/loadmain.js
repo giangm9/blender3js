@@ -9,9 +9,9 @@ var LoadMain = function(){
 
     this.container = document.getElementById("container");
     this.camera = new THREE.PerspectiveCamera(30, this.width / this.height);
-    this.camera.position.x = 5;
-    this.camera.position.y = 6;
-    this.camera.position.z = 10;
+    this.camera.position.x = 2;
+    this.camera.position.y = -10;
+    this.camera.position.z = 4;
     this.scene = new THREE.Scene();
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setClearColor(0xffffff);
