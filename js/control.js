@@ -6,8 +6,20 @@
  */
 
 var Control = function(owner){
+    this.name = "control"
     this.owner = owner;
+    this.phi = 0;
+    this.theta = 0;
+    this.radius = 10;
+    control = this;
+}
 
+Control.prototype.movementX = function(value){
+    this.phi += value;
+}
+
+Control.prototype.movementY = function(value){
+    this.theta += value;
 }
 
 Control.prototype.init = function(){
@@ -29,7 +41,7 @@ Control.prototype.init = function(){
 }
 
 Control.prototype.update = function(){
-
+    this.updateCamera();
 }
 
 Control.prototype.onDocumentMouseBegin = function(){
@@ -39,12 +51,29 @@ Control.prototype.onDocumentMouseBegin = function(){
 
 Control.prototype.onDocumentMouseMove = function(event){
     if (this.touching){
-        console.log(event);
-        this.camera.position.x += .05;
+        var speed = .01;
+        this.theta += event.movementX * speed;
+        this.phi += event.movementY * speed;
     }
 
 }
 
 Control.prototype.onDocumentMouseEnd = function(){
     this.touching = false;
+}
+
+
+Control.prototype.updateCamera = function(){
+    var px = 0;
+    var py = 0;
+    var pz = 0;
+
+    this.camera.position.x
+        = px + this.radius * Math.cos(this.phi) * Math.sin(this.theta);
+    this.camera.position.y
+        = py + this.radius * Math.sin(this.phi) * Math.sin(this.theta);
+    this.camera.position.z
+        = pz + this.radius * Math.cos(this.theta);
+
+
 }
