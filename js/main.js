@@ -3,7 +3,7 @@
 /// <reference path="loadmain.js" />
 
 
-var Scene = function(){
+var ModuleLoader = function(){
     this.seeds = [LoadMain, Control,
         WinResize];
 
@@ -23,7 +23,7 @@ var Scene = function(){
 /**
  * @param {string} name
  */
-Scene.prototype.getModuleByName = function(name){
+ModuleLoader.prototype.getModuleByName = function(name){
     for (var i = 0; i < this.modules.length; ++i){
         if (this.modules[i].name == name){
             return this.modules[i];
@@ -31,11 +31,11 @@ Scene.prototype.getModuleByName = function(name){
     }
 }
 
-Scene.prototype.getMain = function(){
+ModuleLoader.prototype.getMain = function(){
     return this.getModuleByName("main");
 }
 
-Scene.prototype.render = function(){
+ModuleLoader.prototype.render = function(){
     requestAnimationFrame(this.render.bind(this));
     for (var i = 0; i < this.modules.length; ++i){
         if (this.modules[i].update != undefined){
@@ -45,4 +45,4 @@ Scene.prototype.render = function(){
     }
 }
 
-var scene = new Scene();
+var scene = new ModuleLoader();
