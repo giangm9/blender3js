@@ -4,8 +4,8 @@
 
 
 var ModuleLoader = function(){
-    this.seeds = [LoadMain, Control,
-        WinResize];
+    this.seeds = [LoadMain,// Control,
+        WinResize, AutoRotate];
 
     this.modules = [];
     for (var i = 0; i < this.seeds.length; ++i){
