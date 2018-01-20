@@ -1,1 +1,1 @@
-http-server . -p 8001
+webpack-dev-server

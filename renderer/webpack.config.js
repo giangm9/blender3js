@@ -1,3 +1,7 @@
 module.exports = {
-  entry: './src/main.js'
+  entry: './js/main.js',
+  output: {
+    filename: './build/bundle.js'
+  },
+  devtool: 'inline-source-map'
 };
