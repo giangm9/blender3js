@@ -37,8 +37,7 @@ class Scene(base_classes.BaseScene):
             constants.NAME: "default",
             constants.FPS : context.scene.render.fps,
             constants.KEYFRAMES: []
-        });
-        pass
+        })
 
     @property
     def valid_types(self):
@@ -204,7 +203,7 @@ class Scene(base_classes.BaseScene):
         """Locate all valid objects in the scene and parse them"""
         logger.debug("Scene()._parse_objects()")
         try:
-            scene_name = self[constants.METADATA][constants.SOURCE_FILE]
+            _ = self[constants.METADATA][constants.SOURCE_FILE]
         except KeyError:
             scene_name = constants.SCENE
         self[constants.OBJECT] = object_.Object(None, parent=self)
