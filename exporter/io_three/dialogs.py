@@ -110,3 +110,4 @@ def _draw(message, title, wrap, key):
 
     context.window_manager.popup_menu(
         draw, title=title.strip(), icon=icon)
+

@@ -18,6 +18,7 @@ def pose_animation(armature, options):
 
     """
     logger.debug("animation.pose_animation(%s)", armature)
+    print(armature)
     func = _parse_pose_action
     return _parse_action(func, armature, options)
 

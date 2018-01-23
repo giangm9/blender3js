@@ -68,7 +68,7 @@ def dump(filepath, data, options=None):
         indent = options.get(constants.INDENT, True)
         indent = 4 if indent else None
         compact_separators = (',', ':')
-        logger.info("Dumping to JSON")
+        logger.info("Dumping to JSON ")
         func = lambda x, y: _json.json.dump(x, y, indent=indent, separators=compact_separators)
         mode = 'w'
 

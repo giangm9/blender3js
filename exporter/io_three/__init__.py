@@ -38,9 +38,9 @@ logging.basicConfig(
 
 bl_info = {
     'name': "Three.js Format",
-    'author': "repsac, mrdoob, yomotsu, mpk, jpweeks, rkusa, tschw, jackcaron, bhouston",
+    'author': "repsac, mrdoob, yomotsu, mpk, jpweeks, rkusa, tschw, jackcaron, bhouston, giangm9",
     'version': (1, 5, 0),
-    'blender': (2, 74, 0),
+    'blender': (2, 76, 0),
     'location': "File > Export",
     'description': "Export Three.js formatted JSON files.",
     'warning': "Importer not included.",
