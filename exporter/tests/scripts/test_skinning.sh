@@ -1,1 +1,0 @@
-blender -b -P export_skinning.py

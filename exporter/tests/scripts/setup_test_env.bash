@@ -5,7 +5,6 @@ command -v blender >/dev/null 2>&1 || { echo >&2 "Blender is not accessible from
 
 export JSON=`python -c "import tempfile;print(tempfile.mktemp(prefix='$TAG.', suffix='.json'))"`
 
-export BLENDER_USER_SCRIPTS=$(cd "$DIR/../../"; pwd)
 
 # set the root for blend files
 export BLEND=$(cd "$DIR/../blend"; pwd)
