@@ -10,11 +10,10 @@ from bpy.props import (
     StringProperty
 )
 
-
 outputFile = "output/animFK.json"
 
 settings = {
-    constants.VERTICES:  True,
+  constants.VERTICES:  True,
   constants.FACES: True,
   constants.NORMALS: True,
   constants.SKINNING: True,
@@ -57,8 +56,6 @@ settings = {
   constants.FRAME_INDEX_AS_TIME: False,
   constants.INFLUENCES_PER_VERTEX: 2
 }
-
-
 
 
 from IPython import embed
