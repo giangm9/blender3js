@@ -57,6 +57,6 @@ settings = {
   constants.INFLUENCES_PER_VERTEX: 2
 }
 
-
+exporter.export_scene(outputFile, settings)
 from IPython import embed
 embed()
