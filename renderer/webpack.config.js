@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './js/main.js',
+  entry: './src/main.js',
   output: {
     filename: './build/hmi3d.js'
   },
