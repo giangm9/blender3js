@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import * as BlendLoader from "./BlendLoader.js"
 
 var renderer = new THREE.WebGLRenderer();
