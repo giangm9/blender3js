@@ -17,12 +17,12 @@ full = {
   constants.GEOMETRY_TYPE: constants.BUFFER_GEOMETRY,
   constants.INDEX_TYPE: constants.UINT_16,
 
-  constants.MATERIALS: False,
+  constants.MATERIALS: True,
   constants.UVS: True,
   constants.FACE_MATERIALS: False,
-  constants.MAPS: False,
-  constants.COLORS: False,
-  constants.MIX_COLORS: False,
+  constants.MAPS: True,
+  constants.COLORS: True,
+  constants.MIX_COLORS: True,
 
   constants.SCALE: 1,
   constants.ENABLE_PRECISION: True,
@@ -52,5 +52,9 @@ full = {
 no_animation = copy.copy(full)
 no_animation.update({
   constants.SKINNING: True,
-  constants.EMBED_ANIMATION: True
+  constants.EMBED_ANIMATION: True,
+  constants.ANIMATION: False,
+  constants.KEYFRAMES: False,
+  
+
 })
