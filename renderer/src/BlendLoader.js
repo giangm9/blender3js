@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './three.js';
 
 export default function load(path, callback) {
   var loader = new THREE.ObjectLoader();

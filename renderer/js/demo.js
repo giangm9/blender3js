@@ -1,3 +1,6 @@
 $(() => {
-  HMIRenderer.render("output/cubeC.json", document.getElementById("container"));
+  HMI3DRenderer.render(
+    "output/cubeB.json", 
+    document.getElementById("container")
+  );
 })
