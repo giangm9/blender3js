@@ -33,7 +33,7 @@ full = {
   constants.INDENT: True,
   constants.EXPORT_TEXTURES: True,
   constants.EMBED_TEXTURES: False,
-  constants.TEXTURE_FOLDER: '',
+  constants.TEXTURE_FOLDER: 'tests/blend/textures',
   constants.SCENE: True,
   # constants.EMBED_GEOMETRY: properties.option_embed_geometry,
   constants.LIGHTS: True,
@@ -55,6 +55,4 @@ no_animation.update({
   constants.EMBED_ANIMATION: True,
   constants.ANIMATION: False,
   constants.KEYFRAMES: False,
-  
-
 })
