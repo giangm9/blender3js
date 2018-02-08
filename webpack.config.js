@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/main.js',
   output: {
-    filename: './build/hmi3d.js'
+    filename: 'docs/js/hmi3d.js'
   },
   devtool: 'inline-source-map'
 };
