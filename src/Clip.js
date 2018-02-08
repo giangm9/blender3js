@@ -22,6 +22,10 @@ Clip.prototype.render = function(url, container, callback){
   this.container = container;
   this.renderer = new THREE.WebGLRenderer();
 
+  // fix to disable "extension 'GL_ARB_gpu_shader5' is not supported" log
+  // ref : https://github.com/mrdoob/three.js/issues/9716
+  this.renderer.context.getShaderInfoLog = function () { return '' };
+
   var width = this.size().width;
   var height = this.size().height;
   var that = this;
