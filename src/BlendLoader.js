@@ -1,4 +1,4 @@
-import * as THREE from './three.js';
+import * as THREE from './libs/three.js';
 
 export default function load(path, callback) {
   var loader = new THREE.ObjectLoader();
@@ -10,7 +10,7 @@ export default function load(path, callback) {
       callback(obj)
     },
     function (xhr) {
-      console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+      //console.log((xhr.loaded / xhr.total * 100) + '% loaded');
     },
     function (error) {
       console.error('An error happened');

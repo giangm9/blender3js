@@ -2,7 +2,7 @@
  * A 3D clip
  */
 
-import * as THREE from './three.js';
+import * as THREE from './libs/three.js';
 import load from "./BlendLoader.js"
 import "./OrbitControls.js"
 
