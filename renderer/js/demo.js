@@ -1,6 +1,6 @@
 $(() => {
   HMI3DRenderer.render(
-    "output/scene_hemi_light.json", 
+    "output/smallstool.json", 
     document.getElementById("container")
   );
 })
