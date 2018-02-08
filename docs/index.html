@@ -9,6 +9,14 @@ canvas{
   height: 100%;
   border: 1px solid black;
 }
+
+div {
+  border: 2px solid;
+  padding: 20px;
+  width: 300px;
+  resize: both;
+  overflow: auto;
+}
   </style>
 
   <body>
@@ -19,7 +27,13 @@ canvas{
       VNU HMI's 3D Renderer
     </h2>
     <p>Example</p>
-    <div id="container" style="width: 900px; height: 410px;"></div>
+    <select>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="opel">Opel</option>
+      <option value="audi">Audi</option>
+    </select>
+    <div id="container" style="width: 900px; height: 410px; margin:10px"></div>
     <script src="vendor/jquery-3.3.1.min.js"></script>
     <script src="js/hmi3d.js"></script>
     <script src="js/demo.js"></script>
