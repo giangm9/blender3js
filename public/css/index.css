@@ -1,7 +1,6 @@
 html{
   font-family:monospace;
 }
-
 iframe{
   display: block;
   width: 100%;
@@ -41,6 +40,14 @@ pre#js-source{
   background-color: lightgray;
 }
 
-select#examples{
+#examples-select{
   margin-bottom: 10px;
+}
+
+#examples-select > button{
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  margin-right: 5px;
+  box-shadow: 3px 3px;
 }

@@ -3,5 +3,5 @@ import IPython, hmi_exporter, bpy, os
 file_name = bpy.path.basename(bpy.context.blend_data.filepath)
 file_name = os.path.splitext(file_name)[0]
 
-hmi_exporter.export_no_animation("output/" + file_name + ".json")
+hmi_exporter.export_no_animation("public/models/" + file_name + ".json")
 # IPython.embed()
