@@ -13,19 +13,20 @@ div#preview, div#source{
   display: inline-block;
   resize: both;
   border: 1px solid black;
+  padding: 15px;
 }
 
 div#preview{
   overflow: hidden;
   width: 40vw;
-  max-width: 43vw;
+  max-width: 40vw;
   height:30vw;
   margin: 0px;
-
 }
 
 div#source{
   width: 50vw;
+  background-color: lightgray;
 }
 
 div.wrapper{
@@ -37,4 +38,9 @@ pre#js-source{
   font-size : 10pt;
   font-family: Monaco, monospace;
   white-space: pre-wrap;
+  background-color: lightgray;
+}
+
+select#examples{
+  margin-bottom: 10px;
 }
