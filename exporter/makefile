@@ -2,7 +2,7 @@ BLENDER_VER := 2.76
 ADDONS_DIR := ~/.config/blender/$(BLENDER_VER)/scripts/addons
 
 test:
-	blender --background tests/blend/smallstool.blend --python tests/test.py
+	blender --background tests/blend/vase.blend --python tests/test.py
 install:
 	mkdir -p $(ADDONS_DIR)
 	rm -rf $(ADDONS_DIR)/hmi_exporter
