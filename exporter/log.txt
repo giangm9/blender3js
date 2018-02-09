@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/gl/projs/blender3js/exporter/tests/test.py", line 6, in <module>
+    hmi_exporter.export_no_animation("output/" + file_name + ".json")
+  File "/home/gl/.config/blender/2.76/scripts/addons/hmi_exporter/__init__.py", line 9, in export_no_animation
+    exporter.export_scene(file_name, settings.no_animation)
+  File "/home/gl/.config/blender/2.76/scripts/addons/io_three/exporter/__init__.py", line 20, in inner
+    func(filepath, options, *args, **kwargs)
+  File "/home/gl/.config/blender/2.76/scripts/addons/io_three/exporter/__init__.py", line 51, in export_scene
+    scene_.parse()
+  File "/home/gl/.config/blender/2.76/scripts/addons/io_three/exporter/scene.py", line 101, in parse
+    self._parse_textures()
+  File "/home/gl/.config/blender/2.76/scripts/addons/io_three/exporter/scene.py", line 234, in _parse_textures
+    tex_inst = texture.Texture(texture_name, self)
+  File "/home/gl/.config/blender/2.76/scripts/addons/io_three/exporter/texture.py", line 17, in __init__
+    img_inst = image.Image(image_node.name, self.scene)
+  File "/home/gl/.config/blender/2.76/scripts/addons/io_three/exporter/image.py", line 16, in __init__
+    texturefile = open(api.image.file_path(self.node),"rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/c:/blender/durian/dragoncloth.png'

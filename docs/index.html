@@ -2,23 +2,15 @@
 
   <head>
     <title>Blender json renderer</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="vendor/sh_matlab.css">
+
+    <script src="vendor/jquery-3.3.1.min.js"></script>
+    <script src="vendor/sh_main.min.js"></script>
+    <script src="vendor/sh_javascript.min.js"></script>
+
+    <script src="js/index.js"></script>
   </head>
-  <style>
-canvas{
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
-}
-
-div {
-  border: 2px solid;
-  padding: 20px;
-  width: 300px;
-  resize: both;
-  overflow: auto;
-}
-  </style>
-
   <body>
     <h1>
       HMI Renderer
@@ -26,17 +18,24 @@ div {
     <h2>
       VNU HMI's 3D Renderer
     </h2>
-    <p>Example</p>
+    <p>Examples</p>
     <select>
       <option value="volvo">Volvo</option>
       <option value="saab">Saab</option>
       <option value="opel">Opel</option>
       <option value="audi">Audi</option>
     </select>
-    <div id="container" style="width: 900px; height: 410px; margin:10px"></div>
-    <script src="vendor/jquery-3.3.1.min.js"></script>
-    <script src="js/hmi3d.js"></script>
-    <script src="js/demo.js"></script>
+    <br>
+    <div class='wrapper'>
+      <div id='source'>
+        <pre class='sh_javascript' id='js-source'>
+        <pre>
+      </div>
+      <div id='preview'>
+        <iframe src='examples/5cubes.html'>
+        </iframe>
+      </div>
+    </div>
   </body>
 
 </html>

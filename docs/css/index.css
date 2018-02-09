@@ -1,0 +1,40 @@
+html{
+  font-family:monospace;
+}
+
+iframe{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+div#preview, div#source{
+  vertical-align: text-top;
+  display: inline-block;
+  resize: both;
+  border: 1px solid black;
+}
+
+div#preview{
+  overflow: hidden;
+  width: 40vw;
+  max-width: 43vw;
+  height:30vw;
+  margin: 0px;
+
+}
+
+div#source{
+  width: 50vw;
+}
+
+div.wrapper{
+  text-align: left;
+  vertical-align: text-top;
+}
+
+pre#js-source{
+  font-size : 10pt;
+  font-family: Monaco, monospace;
+  white-space: pre-wrap;
+}

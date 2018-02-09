@@ -13,8 +13,8 @@ function Clip(){}
 
 Clip.prototype.size = function(){
   return {
-    width: this.container.offsetWidth,
-    height: this.container.offsetHeight
+    width: this.container.clientWidth,
+    height: this.container.clientHeight
   }
 }
 
