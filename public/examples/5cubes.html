@@ -7,10 +7,10 @@
     <script src="../js/hmi3d.js"></script>
     <script>
       $(function(){
-        HMI3DRenderer.render(
-            "../models/quartz.json",
-            document.getElementById("container"),
-        );
+        HMI3DRenderer.render({
+          url: "../models/quartz.json",
+          container: document.getElementById("container"),
+        });
       })
     </script>
     <div id="container">

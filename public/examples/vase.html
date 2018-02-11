@@ -7,10 +7,11 @@
     <script src="../js/hmi3d.js"></script>
     <script>
       $(function(){
-        HMI3DRenderer.render(
-            "../models/vase.json",
-            document.getElementById("container"),
-        );
+        HMI3DRenderer.stats(true);
+        HMI3DRenderer.render({
+            url: "../models/vase.json",
+            container: document.getElementById("container"),
+        });
       })
     </script>
     <div id="container">
