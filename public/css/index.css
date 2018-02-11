@@ -40,14 +40,31 @@ pre#js-source{
   background-color: lightgray;
 }
 
-#examples-select{
+#select {
   margin-bottom: 10px;
 }
 
-#examples-select > button{
-  margin-bottom: 10px;
-  background-color: white;
-  border: 1px solid black;
-  margin-right: 5px;
-  box-shadow: 3px 3px;
+#select input[type=radio] {
+  display:none;
+}
+
+#select label {
+  border: outset 1px silver;
+  padding: 2px 16px;
+  margin-right: 10px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 1px 1px grey;
+  font-weight: bold;
+}
+
+#select input:checked + label {
+  border: inset 1px silver;
+  background: lightgray;
+  background-size: 16px 48px;
+  box-shadow: none;
+}
+
+#select input:hover+ label {
+  background: lightgray;
 }
