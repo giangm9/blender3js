@@ -1,3 +1,10 @@
+.white-bg{
+  background-color: white;
+}
+
+.black-border{
+  border: 1px solid black;
+}
 html{
   font-family:monospace;
 }
@@ -21,6 +28,7 @@ div#preview{
   max-width: 40vw;
   height:30vw;
   margin: 0px;
+  text-align: right;
 }
 
 div#source{
@@ -68,3 +76,5 @@ pre#js-source{
 #select input:hover+ label {
   background: lightgray;
 }
+
+

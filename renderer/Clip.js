@@ -4,7 +4,6 @@
 
 import * as THREE from './libs/three.js';
 import Load from "./BlendLoader.js";
-import Stats from "./stats.js";
 import "./OrbitControls.js";
 
 const CONTROL_MIN_DISTANCE = 10;
@@ -20,7 +19,6 @@ Clip.prototype.size = function () {
   }
 }
 
-
 /**
  * 
  * @param {Object} parameters 
@@ -32,8 +30,6 @@ Clip.prototype.size = function () {
 Clip.prototype.render = function (parameters){
   this.container = parameters.container;
   this.renderer = new THREE.WebGLRenderer({ antialias: true });
-  this.stats = new Stats();
-  container.appendChild(this.stats.dom);
 
   /**
    * fix to disable "extension 'GL_ARB_gpu_shader5' is not supported" log
@@ -47,7 +43,7 @@ Clip.prototype.render = function (parameters){
   this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
   var controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 
-  container.appendChild(this.renderer.domElement);
+  this.container.appendChild(this.renderer.domElement);
 
   controls.maxPolarAngle = Math.PI * 0.5;
   controls.minDistance = CONTROL_MIN_DISTANCE;
@@ -68,13 +64,6 @@ Clip.prototype.animate = function () {
   requestAnimationFrame(this.animate.bind(this));
   this.renderer.setSize(size.width, size.height);
   this.renderer.render(this.scene, this.camera);
-
-  if (Clip.enableStats) {
-    this.stats.dom.style.visibility= 'visible'
-    this.stats.update();
-  } else {
-    this.stats.dom.style.visibility= 'hidden'
-  }
 };
 
 export default Clip
