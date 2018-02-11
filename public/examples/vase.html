@@ -19,9 +19,7 @@ div{
       $(function(){
         var divs = ["top-left", "top-right", "bottom-left", "bottom-right"];
 
-        HMI3DRenderer.stats(true);
         divs.forEach( function(id){
-          console.log(document.getElementById(id));
           HMI3DRenderer.render({
             url: "../models/vase.json",
             container: document.getElementById(id),
