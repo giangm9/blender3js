@@ -1,25 +1,39 @@
 <html>
 
-  <head>
-    <title>Blender json renderer</title>
-    <link rel="stylesheet" type="text/css" href="public/css/index.css">
-    <link rel="stylesheet" type="text/css" href="public/vendor/sh_matlab.min.css">
-    <script src="public/vendor/jquery-3.3.1.min.js"></script>
-    <script src="public/vendor/sh_main.min.js"></script>
-    <script src="public/vendor/sh_javascript.min.js"></script>
-    <script src="public/js/index.js"></script>
-    <script src="public/js/files.js"></script>
-  </head>
-  <body>
-    <h1>HMI Renderer</h1>
-    <h2>VNU HMI's 3D Renderer</h2>
-    <h3>EXAMPLES (unable to edit)</h3>
-    <div id="select" action='#'>
-    </div>
+<head>
+  <title>Blender json renderer</title>
+  <link rel="stylesheet" type="text/css" href="public/css/index.css">
+  <link rel="stylesheet" type="text/css" href="public/vendor/sh_matlab.min.css">
+  <script src="public/vendor/jquery-3.3.1.min.js"></script>
+  <script src="public/vendor/sh_main.min.js"></script>
+  <script src="public/vendor/sh_javascript.min.js"></script>
+  <script src="public/js/index.js"></script>
+  <script src="public/js/files.js"></script>
+</head>
 
-    <div class='wrapper'>
-      <div id='source'>
-        <pre class='sh_javascript' id='js-source'>
+<body>
+  <h1>HMI Renderer</h1>
+  <h2>VNU HMI's 3D Renderer</h2>
+  <!--
+  <a href="public/docs.html">Document</a>
+  -->
+  <a href="public/js/hmi3d.js">Download</a>
+  <!--
+  <h3>Use link</h3>
+  <div class='light-graybg'>
+    <pre class='black-border use-link'>&lt;script src="https://raw.githubusercontent.com/giangm9/blender3js/master/public/js/hmi3d.js">&lt;/script>
+    </pre>
+  </div>
+-->
+
+  <h3>EXAMPLES (unable to edit)</h3>
+
+  <div id="select" action='#'>
+  </div>
+
+  <div class='wrapper'>
+    <div id='source'>
+      <pre id='js-source' class='sh_javascript light-graybg'>
         <pre>
       </div>
       <div id='preview'>
