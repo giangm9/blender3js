@@ -9,8 +9,8 @@ import "./OrbitControls.js"
 const CONTROL_MIN_DISTANCE = 10;
 const CONTROL_MAX_DISTANCE = 50;
 
-
 function Clip(url, container, callback){
+  // Load part
   this.container = container;
   this.renderer = new THREE.WebGLRenderer();
 
@@ -34,17 +34,28 @@ function Clip(url, container, callback){
     this.scene = scene;
     controls.reset();
     this.animate();
+    /**
+     * Init clip state  
+     */
+    this.state = 'idle';
+    this.time = 0;
+    this.loop = false;
+    this.clock = new THREE.Clock();
+
     if (callback){
       callback(this);
     }
   }.bind(this));
 }
 
-
 Clip.prototype.play = function(){
-  this.playing = true;
-
+  this.state = 'play'
 }
+
+Clip.prototype.pause = function(){
+  this.state = 'pause';
+}
+
 Clip.prototype.size = function(){
   return {
     width: this.container.clientWidth,
@@ -52,11 +63,17 @@ Clip.prototype.size = function(){
   }
 }
 
+Clip.prototype.updateAnimation = function(delta){
+
+}
+
 Clip.prototype.animate = function(){
   var size = this.size();
   requestAnimationFrame(this.animate.bind(this));
   this.renderer.setSize(size.width, size.height);
   this.renderer.render(this.scene, this.camera);
+  this.updateAnimation(this.clock.getDelta());
 };
+
 
 export default Clip
