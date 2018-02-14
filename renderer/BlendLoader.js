@@ -1,6 +1,6 @@
 import * as THREE from './libs/three.js';
 
-export default function load(path, callback) {
+export default function Load(path, callback) {
   var loader = new THREE.ObjectLoader();
   var res = null;
 

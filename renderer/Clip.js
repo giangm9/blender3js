@@ -3,22 +3,14 @@
  */
 
 import * as THREE from './libs/three.js';
-import load from "./BlendLoader.js"
+import Load from "./BlendLoader.js"
 import "./OrbitControls.js"
 
 const CONTROL_MIN_DISTANCE = 10;
 const CONTROL_MAX_DISTANCE = 50;
 
-function Clip(){}
 
-Clip.prototype.size = function(){
-  return {
-    width: this.container.clientWidth,
-    height: this.container.clientHeight
-  }
-}
-
-Clip.prototype.render = function(url, container, callback){
+function Clip(url, container, callback){
   this.container = container;
   this.renderer = new THREE.WebGLRenderer();
 
@@ -38,15 +30,27 @@ Clip.prototype.render = function(url, container, callback){
   controls.minDistance = CONTROL_MIN_DISTANCE;
   controls.maxDistance = CONTROL_MAX_DISTANCE;
 
-  load(url, (scene) => {
-    that.scene = scene;
+  Load(url, function(scene) {
+    this.scene = scene;
     controls.reset();
-    that.animate();
+    this.animate();
     if (callback){
       callback(this);
     }
-  });
-};
+  }.bind(this));
+}
+
+
+Clip.prototype.play = function(){
+  this.playing = true;
+
+}
+Clip.prototype.size = function(){
+  return {
+    width: this.container.clientWidth,
+    height: this.container.clientHeight
+  }
+}
 
 Clip.prototype.animate = function(){
   var size = this.size();
