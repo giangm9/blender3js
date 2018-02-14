@@ -4,6 +4,12 @@ $(
     var divSource = $('#source');
     var selectExample = $("#select");
     var iframePreview = $("#if-preview");
+    var btnFull = $("#full");
+    var fullUrl = '';
+    
+    btnFull.click(function(){
+      window.open(fullUrl, "_blank");
+    });
 
     for (var name in AllExamples){
       var url = AllExamples[name];
@@ -26,14 +32,15 @@ $(
     }
     var first = selectExample.children(":first");
     first.attr("checked", true);
+    fullUrl = first.val();
     updateExample(first.val());
 
     $('input[type="radio"]').change(function(){
       if ($(this).is(':checked')){
-        var url = $(this).val();
+        fullUrl = $(this).val();
         selectExample.attr("disabled", "disabled");
         updateExample(
-          url,
+          fullUrl,
           function(){ 
             selectExample.removeAttr("disabled");
           }
