@@ -4,8 +4,9 @@
 
 import * as THREE from './libs/three.js';
 
-import Load from "./BlendLoader.js"
-import "./OrbitControls.js"
+import Load from './BlendLoader.js';
+import AddHelpers from './Helpers.js';
+import './OrbitControls.js';
 
 const CONTROL_MIN_DISTANCE = 10;
 const CONTROL_MAX_DISTANCE = 50;
@@ -53,11 +54,11 @@ function Clip(url, container, callback){
     controls.reset();
     this.animate();
     this.scene.background = new THREE.Color( 0xaaaadf);
-    var plane = new THREE.GridHelper(100, 20);
-    this.scene.add(plane);
+
     /**
      * Init clip state  
      */
+    AddHelpers(this.scene);
     this.state = 'idle';
     this.time = 0;
     this.loop = false;

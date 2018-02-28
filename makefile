@@ -1,12 +1,13 @@
 BLENDER_VER := 2.76
 ADDONS_DIR := ~/.config/blender/$(BLENDER_VER)/scripts/addons
+EXPORT_FILE := room.blend
 
 build:
 	webpack
 test:
 	webpack-dev-server
 export:
-	blender --background exporter/tests/blend/rotation.blend --python exporter/tests/test.py
+	blender --background exporter/tests/blend/$(EXPORT_FILE) --python exporter/tests/test.py
 install-renderer:
 	mkdir -p $(ADDONS_DIR)
 	rm -rf $(ADDONS_DIR)/hmi_exporter

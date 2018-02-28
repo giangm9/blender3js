@@ -1,0 +1,43 @@
+# MakeHuman exported MTL
+# www.makehuman.org
+
+
+newmtl DefaultSkin
+Kd 0.5903 0.44 0.338
+Ks 0.3 0.3 0.3
+d 1
+
+newmtl Eye_brown
+Kd 1 1 1
+Ks 1 1 1
+d 0
+map_Kd textures/brown_eye.png
+map_D textures/brown_eye.png
+
+newmtl FedoraMaterial
+Kd 0.9686 0.9686 0.9686
+Ks 0.02745 0.02745 0.02745
+d 0
+map_Kd textures/fedora_texture.png
+map_D textures/fedora_texture.png
+
+newmtl male_worksuit01
+Kd 1 1 1
+Ks 0.02745 0.02745 0.02745
+d 0
+map_Kd textures/male_worksuit01_diffuse.png
+map_D textures/male_worksuit01_diffuse.png
+
+newmtl shoes03
+Kd 1 1 1
+Ks 0.03529 0.03137 0.03137
+d 0
+map_Kd textures/shoes03_diffuse.png
+map_D textures/shoes03_diffuse.png
+
+newmtl Shoes05
+Kd 1 1 1
+Ks 0.05098 0.04706 0.04706
+d 0
+map_Kd textures/shoes05_diffuse.png
+map_D textures/shoes05_diffuse.png
