@@ -6,7 +6,7 @@ build:
 test:
 	webpack-dev-server
 export:
-	blender --background exporter/tests/blend/vase.blend --python exporter/tests/test.py
+	blender --background exporter/tests/blend/rotation.blend --python exporter/tests/test.py
 install-renderer:
 	mkdir -p $(ADDONS_DIR)
 	rm -rf $(ADDONS_DIR)/hmi_exporter

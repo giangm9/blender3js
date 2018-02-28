@@ -10,11 +10,6 @@ import "./OrbitControls.js"
 const CONTROL_MIN_DISTANCE = 10;
 const CONTROL_MAX_DISTANCE = 50;
 
-
-
-
-
-
 Clip.prototype.size = function () {
   return {
     width: this.container.clientWidth,
@@ -29,7 +24,9 @@ Clip.prototype.size = function () {
  * @param {function()} callback: callback function when load success
  */
 function Clip(url, container, callback){
-  // Load part
+  var width, height;
+  var controls;
+
   this.container = container;
   this.renderer = new THREE.WebGLRenderer({ antialias: true });
 
@@ -38,11 +35,11 @@ function Clip(url, container, callback){
    * @see https://github.com/mrdoob/three.js/issues/9716
    */
   this.renderer.context.getShaderInfoLog = function () { return '' };
+  width = this.size().width;
+  height = this.size().height;
 
-  var width = this.size().width;
-  var height = this.size().height;
   this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-  var controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+  controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 
   this.container.appendChild(this.renderer.domElement);
 
@@ -55,6 +52,9 @@ function Clip(url, container, callback){
     this.scene = scene;
     controls.reset();
     this.animate();
+    this.scene.background = new THREE.Color( 0xaaaadf);
+    var plane = new THREE.GridHelper(100, 20);
+    this.scene.add(plane);
     /**
      * Init clip state  
      */
@@ -62,6 +62,7 @@ function Clip(url, container, callback){
     this.time = 0;
     this.loop = false;
     this.clock = new THREE.Clock();
+
 
     if (callback){
       callback(this);
@@ -98,3 +99,4 @@ Clip.prototype.animate = function () {
 
 
 export default Clip
+    // Show Ground 
