@@ -42,6 +42,7 @@ def export_scene(filepath, options):
     # applying modifiers, if it is necessary
     # record the selected nodes so that selection is restored later
     for obj in api.selected_objects():
+        print('Exporting : ', obj);
         api.object.unselect(obj)
         selected.append(obj)
     active = api.active_object()
