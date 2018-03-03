@@ -1,6 +1,6 @@
 BLENDER_VER := 2.76
 ADDONS_DIR := ~/.config/blender/$(BLENDER_VER)/scripts/addons
-EXPORT_FILE := diamon.blend
+EXPORT_FILE := anim.blend
 
 init:
 	sudo apt install blender
