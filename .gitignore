@@ -3,3 +3,4 @@
 package-lock.json
 **/*.blend1
 .vim
+.vim-bookmarks
