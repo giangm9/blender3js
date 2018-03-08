@@ -4,6 +4,6 @@ AllExamples = {
   "human"    : "./public/examples/human.html",
   "room"     : "./public/examples/room.html",
   "rotation" : "./public/examples/rotation.html",
-  "backpack" : "./public/examples/backpack.html",
-
+  "anim"     : "./public/examples/anim.html",
+  "rigged"   : "./public/examples/rigged.html",
 }

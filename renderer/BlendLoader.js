@@ -10,7 +10,7 @@ export default function Load(path, callback) {
       callback(obj)
     },
     function (xhr) {
-      //console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+      console.log((xhr.loaded / xhr.total * 100) + '% loaded');
     },
     function (error) {
       console.error('An error happened');

@@ -6,6 +6,7 @@ import * as THREE from './libs/three.js';
 
 import Load from './BlendLoader.js';
 import AddHelpers from './Helpers.js';
+import Animations from './Animations.js';
 import './OrbitControls.js';
 
 const CONTROL_MIN_DISTANCE = 10;
@@ -24,12 +25,17 @@ Clip.prototype.size = function () {
  * @param {domElement} container : the containter of the Clip
  * @param {function()} callback: callback function when load success
  */
-function Clip(url, container, callback){
+function Clip( url, container, callback ){
+
+  this.container  = container;
+  this.renderer   = new THREE.WebGLRenderer({ antialias : true });
+  this.animations = null;
+  this.camera     = null;
+  this.scene      = null;
+  this.clock      = null;
+
   var width, height;
   var controls;
-
-  this.container = container;
-  this.renderer = new THREE.WebGLRenderer({ antialias: true });
 
   /**
    * fix to disable "extension 'GL_ARB_gpu_shader5' is not supported" log
@@ -49,8 +55,11 @@ function Clip(url, container, callback){
   controls.maxDistance = CONTROL_MAX_DISTANCE;
 
 
-  Load(url, function(scene) {
+  Load(url, function( scene ) {
     this.scene = scene;
+    this.animations = new Animations( scene );
+    this.clock = new THREE.Clock();
+    console.log(scene);
     controls.reset();
     this.animate();
     this.scene.background = new THREE.Color( 0xaaaadf);
@@ -62,7 +71,6 @@ function Clip(url, container, callback){
     this.state = 'idle';
     this.time = 0;
     this.loop = false;
-    this.clock = new THREE.Clock();
 
 
     if (callback){
@@ -87,7 +95,7 @@ Clip.prototype.size = function(){
 }
 
 Clip.prototype.updateAnimation = function(delta){
-
+  this.animations.update(delta);
 }
 
 Clip.prototype.animate = function () {
@@ -95,7 +103,7 @@ Clip.prototype.animate = function () {
   requestAnimationFrame(this.animate.bind(this));
   this.renderer.setSize(size.width, size.height);
   this.renderer.render(this.scene, this.camera);
-//  this.updateAnimation(this.clock.getDelta());
+  this.updateAnimation(this.clock.getDelta());
 };
 
 

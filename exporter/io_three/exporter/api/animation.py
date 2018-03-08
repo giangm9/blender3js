@@ -7,6 +7,9 @@ import math
 import mathutils
 from bpy import data, context, ops
 from .. import constants, logger
+import pprint as pp
+import IPython
+import pdb
 
 def pose_animation(armature, options):
     """Query armature animation using pose bones
@@ -18,7 +21,6 @@ def pose_animation(armature, options):
 
     """
     logger.debug("animation.pose_animation(%s)", armature)
-    print(armature)
     func = _parse_pose_action
     return _parse_action(func, armature, options)
 
@@ -51,6 +53,7 @@ def _parse_action(func, armature, options):
         logger.info("Parsing action %s", action.name)
         animation = func(action, armature, options)
         animations.append(animation)
+        pdb.set_trace()
     return animations
 
 

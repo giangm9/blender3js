@@ -1,6 +1,7 @@
 BLENDER_VER := 2.76
 ADDONS_DIR := ~/.config/blender/$(BLENDER_VER)/scripts/addons
-EXPORT_FILE := anim.blend
+EXPORT_FILE := anim2.blend
+BLENDER_EXECUTE := blender279a
 
 init:
 	sudo apt install blender
@@ -10,7 +11,9 @@ build:
 test:
 	webpack-dev-server
 export:
-	blender --background exporter/tests/blend/$(EXPORT_FILE) --python exporter/tests/test.py
+	$(BLENDER_EXECUTE) --background exporter/tests/blend/$(EXPORT_FILE) --python exporter/tests/test.py
+	#$(BLENDER_EXECUTE) exporter/tests/blend/$(EXPORT_FILE) --python exporter/tests/test.py
+
 install-exporter:
 	mkdir -p $(ADDONS_DIR)
 	rm -rf $(ADDONS_DIR)/hmi_exporter
