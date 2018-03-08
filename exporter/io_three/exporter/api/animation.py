@@ -5,12 +5,12 @@ updated on 2/07/2016: bones scaling support (@uthor verteAzur verteAzur@multiver
 
 import math
 import mathutils
+import pudb
 from bpy import data, context, ops
 from .. import constants, logger
-import pprint as pp
 import IPython
-import pdb
 
+C = context
 def pose_animation(armature, options):
     """Query armature animation using pose bones
 
@@ -42,7 +42,7 @@ def rest_animation(armature, options):
 def _parse_action(func, armature, options):
     """
 
-    :param func:
+    :param func: callback function
     :param armature:
     :param options:
 
@@ -53,7 +53,6 @@ def _parse_action(func, armature, options):
         logger.info("Parsing action %s", action.name)
         animation = func(action, armature, options)
         animations.append(animation)
-        pdb.set_trace()
     return animations
 
 
@@ -185,31 +184,35 @@ def _parse_pose_action(action, armature, options):
     :param options:
 
     """
+#    pudb.start()
     try:
         current_context = context.area.type
     except AttributeError:
         for window in context.window_manager.windows:
             screen = window.screen
             for area in screen.areas:
-                if area.type != 'VIEW_3D':
-                    continue
+                if area.type == 'VIEW_3D':
+                    override = {
+                        'window': window,
+                        'screen': screen,
+                        'area': area
+                    }
+#                    pudb.start()
+#                    ops.screen.screen_full_area(override)
+                    break
 
-                override = {
-                    'window': window,
-                    'screen': screen,
-                    'area': area
-                }
-                ops.screen.screen_full_area(override)
-                break
-        current_context = context.area.type
+#    current_context = context.area.type
+#    pudb.start()
 
     context.scene.objects.active = armature
-    context.area.type = 'DOPESHEET_EDITOR'
-    context.space_data.mode = 'ACTION'
-    context.area.spaces.active.action = action
+    #IPython.embed()
+#    context.area.type = 'DOPESHEET_EDITOR'
+#    context.space_data.mode = 'ACTION'
+#    context.area.spaces.active.action = action
 
     armature_matrix = armature.matrix_world
-    fps = context.scene.render.fps
+    fps = 30 # context.scene.render.fps
+
 
     end_frame = action.frame_range[1]
     start_frame = action.frame_range[0]
@@ -347,8 +350,8 @@ def _parse_pose_action(action, armature, options):
     if frame_index_as_time is False:
         frame_length = frame_length / fps
 
-    context.scene.frame_set(start_frame)
-    context.area.type = current_context
+    # context.scene.frame_set(start_frame)
+    #context.area.type = current_context
 
     animation = {
         constants.HIERARCHY: hierarchy,
@@ -358,7 +361,6 @@ def _parse_pose_action(action, armature, options):
     }
 
     return animation
-
 
 def _find_channels(action, bone, channel_type):
     """

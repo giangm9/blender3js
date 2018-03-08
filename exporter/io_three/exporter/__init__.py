@@ -1,10 +1,8 @@
 import os
 import sys
 import traceback
-import pprint as pp
 from .. import constants, logger, exceptions, dialogs
 from . import scene, geometry, api, base_classes
-
 
 def _error_handler(func):
     
