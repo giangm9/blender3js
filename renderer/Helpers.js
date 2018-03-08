@@ -17,17 +17,20 @@ function addGrid(scene){
 }
 
 function addArrow(scene){
-  var dir = new THREE.Vector3( 1, 2, 0 );
-
-  //normalize the direction vector (convert to vector of length 1)
-  dir.normalize();
+  var dirX = new THREE.Vector3( 1, 0, 0 );
+  var dirY = new THREE.Vector3( 0, 1, 0 );
+  var dirZ = new THREE.Vector3( 0, 0, 1 );
 
   var origin = new THREE.Vector3( 0, 0, 0 );
-  var length = 1;
-  var hex = 0xffff00;
 
-  var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
-  scene.add( arrowHelper );
+  var arrowX = new THREE.ArrowHelper( dirX, origin, 1, 0xff0000);
+  var arrowY = new THREE.ArrowHelper( dirY, origin, 1, 0x00ff00);
+  var arrowZ = new THREE.ArrowHelper( dirZ, origin, 1, 0x0000ff);
+
+  scene.add( arrowX );
+  scene.add( arrowY );
+  scene.add( arrowZ );
 }
+
 
 
