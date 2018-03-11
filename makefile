@@ -5,7 +5,7 @@ BLENDER_EXECUTE := blender279a
 
 init:
 	sudo apt install blender
-	sudo npm i -g webpack webpack-dev-server
+	sudo npm i -g webpack-cli webpack-dev-server
 build:
 	webpack
 test:
