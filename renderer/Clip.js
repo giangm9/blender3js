@@ -11,12 +11,6 @@ import './OrbitControls.js';
 const CONTROL_MIN_DISTANCE = 10;
 const CONTROL_MAX_DISTANCE = 50;
 
-Clip.prototype.size = function () {
-  return {
-    width: this.container.clientWidth,
-    height: this.container.clientHeight
-  }
-}
 
 /**
  * 
@@ -66,6 +60,7 @@ function Clip( url, container, callback ){
     global.scene = this.scene;
 
     this.scene.background = new THREE.Color( 0xaaaadf );
+    this.enableShadow();
     controls.reset();
 
     this.animate();
@@ -102,6 +97,23 @@ Clip.prototype.animate = function () {
   this.updateAnimation(this.clock.getDelta());
 };
 
+Clip.prototype.size = function () {
+  return {
+    width: this.container.clientWidth,
+    height: this.container.clientHeight
+  }
+}
 
+Clip.prototype.enableShadow = function(){
+  this.renderer.shadowMapEnabled = true;
+  this.scene.children.forEach( function( obj ) {
+    if ( obj.isLight ) {
+      obj.castShadow = true;
+    } 
+
+    if ( obj.isMesh ) {
+      obj.receiveShadow = true;
+    }
+  })
+}
 export default Clip
-    // Show Ground 

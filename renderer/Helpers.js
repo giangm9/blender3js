@@ -9,7 +9,7 @@ function Helpers( scene ){
   this.scene = scene;
   this.addGrid();
   this.addAxes();
-  this.addWireFrame();
+//  this.addWireFrame();
 }
 
 Helpers.prototype.addGrid = function(){
@@ -26,7 +26,7 @@ Helpers.prototype.addWireFrame = function(){
   this.scene.children.forEach( function( obj ) {
     if ( obj.isMesh ) {
       var geo = new THREE.EdgesGeometry( obj.geometry ); // or WireframeGeometry
-      var mat = new THREE.LineBasicMaterial( { color: 0x22ff0000, linewidth: 1 } );
+      var mat = new THREE.LineBasicMaterial( { color: 0x22220000, linewidth: 1 } );
       var wireframe = new THREE.LineSegments( geo, mat );
       obj.add( wireframe );
     }
