@@ -1,6 +1,6 @@
 BLENDER_VER := 2.79
 ADDONS_DIR := ~/.config/blender/$(BLENDER_VER)/scripts/addons
-EXPORT_FILE := monkey.blend
+EXPORT_FILE := anim0.blend
 BLENDER_EXECUTE := blender279a
 
 init-ubuntu:

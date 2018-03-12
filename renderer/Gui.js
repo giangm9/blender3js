@@ -5,7 +5,7 @@
  /**
   * @param {Clip} clip
   */
-function Gui(clip){
 
+function Gui( clip ){
 }
 
