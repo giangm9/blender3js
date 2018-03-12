@@ -27,12 +27,12 @@ def flip_axes (a, dir=XYZ):
 
     """
 
-#   if dir == XZ_Y:
-#       a = (a[0], a[2], -a[1])
-#   elif dir == X_ZY:
-#       a = (a[0], -a[2], a[1])
-#   elif dir == _XY_Z:
-#       a = (-a[0], -a[1], a[2])
+    if dir == XZ_Y:
+        a = (a[0], a[2], -a[1])
+    elif dir == X_ZY:
+        a = (a[0], -a[2], a[1])
+    elif dir == _XY_Z:
+        a = (-a[0], -a[1], a[2])
 
     return (a[0], a[1], a[2])
 

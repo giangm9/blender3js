@@ -23,6 +23,6 @@ export default function Animations( scene ) {
 
 Animations.prototype.update = function(dt){
   this.mixers.forEach(function(mixer){
-    mixer.update(dt);
+    mixer.update(dt * 0.1);
   });
 }

@@ -3,5 +3,6 @@ module.exports = {
   output: {
     filename: 'public/js/hmi3d.js'
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
+//  mode: "development"
 };
