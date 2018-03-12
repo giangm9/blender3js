@@ -1,36 +1,24 @@
 /**
- * To add Helper into a scene
+ * Scene's Helpers
+ * Need for development purpose
  * */
 
 import * as THREE from './libs/three.js';
 
-export default function AddHelpers(scene){
-
-  addGrid(scene);
-  addArrow(scene);
-
+function Helpers( scene ){
+  this.scene = scene;
+  this.addGrid();
+  this.addAxes();
 }
 
-function addGrid(scene){
-  var plane = new THREE.GridHelper(100, 20);
-  scene.add(plane);
+Helpers.prototype.addGrid = function(){
+  var grid = new THREE.GridHelper(100, 20);
+  this.scene.add(grid);
 }
 
-function addArrow(scene){
-  var dirX = new THREE.Vector3( 1, 0, 0 );
-  var dirY = new THREE.Vector3( 0, 1, 0 );
-  var dirZ = new THREE.Vector3( 0, 0, 1 );
-
-  var origin = new THREE.Vector3( 0, 0, 0 );
-
-  var arrowX = new THREE.ArrowHelper( dirX, origin, 1, 0xff0000);
-  var arrowY = new THREE.ArrowHelper( dirY, origin, 1, 0x00ff00);
-  var arrowZ = new THREE.ArrowHelper( dirZ, origin, 1, 0x0000ff);
-
-  scene.add( arrowX );
-  scene.add( arrowY );
-  scene.add( arrowZ );
+Helpers.prototype.addAxes = function(){
+  var axis = new THREE.AxesHelper( 20 );
+  this.scene.add(axis); 
 }
 
-
-
+export default Helpers

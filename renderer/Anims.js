@@ -1,7 +1,7 @@
 import * as THREE from './libs/three.js';
 
-export default function Animations( scene ) {
-  this.animations = [];
+export default function Anims ( scene ) {
+  this.anims = [];
   this.mixers = [];
   scene.children.forEach(function( obj ){
     if (obj.geometry && obj.geometry.animations && obj.geometry.animations.length > 0){
@@ -9,7 +9,7 @@ export default function Animations( scene ) {
       var anim = obj.geometry.animations[0];
       var mixer = null;
 
-      this.animations.push( anim );
+      this.anims.push( anim );
       mixer = new THREE.AnimationMixer( obj );
       mixer.clipAction( anim ).play();
       this.mixers.push(mixer);
@@ -21,7 +21,7 @@ export default function Animations( scene ) {
   }.bind(this));
 }
 
-Animations.prototype.update = function(dt){
+Anims.prototype.update = function(dt){
   this.mixers.forEach(function(mixer){
     mixer.update(dt * 0.1);
   });

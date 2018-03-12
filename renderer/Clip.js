@@ -3,10 +3,9 @@
  */
 
 import * as THREE from './libs/three.js';
-
-import Load from './BlendLoader.js';
-import AddHelpers from './Helpers.js';
-import Animations from './Animations.js';
+import Load       from './BlendLoader.js';
+import Helpers    from './Helpers.js';
+import Anims      from './Anims.js';
 import './OrbitControls.js';
 
 const CONTROL_MIN_DISTANCE = 10;
@@ -57,22 +56,19 @@ function Clip( url, container, callback ){
 
   Load(url, function( scene ) {
     this.scene = scene;
-    this.animations = new Animations( scene );
+    this.anims = new Anims( scene );
     this.clock = new THREE.Clock();
-    console.log(scene);
-    controls.reset();
-    this.animate();
-    this.scene.background = new THREE.Color( 0xaaaadf);
-
-    /**
-     * Init clip state  
-     */
-    AddHelpers(this.scene);
     this.state = 'idle';
-    this.time = 0;
-    this.loop = false;
+    this.time  = 0;
+    this.loop  = false;
+    this.helper = new Helpers( scene );
 
+    global.scene = this.scene;
 
+    this.scene.background = new THREE.Color( 0xaaaadf );
+    controls.reset();
+
+    this.animate();
     if (callback){
       callback(this);
     }
@@ -95,7 +91,7 @@ Clip.prototype.size = function(){
 }
 
 Clip.prototype.updateAnimation = function(delta){
-  this.animations.update(delta);
+  this.anims.update(delta);
 }
 
 Clip.prototype.animate = function () {
