@@ -19,6 +19,7 @@ const CONTROL_MAX_DISTANCE = 50;
  * @param {function()} callback: callback function when load success
  */
 function Clip( url, container, callback ){
+  console.log("Clip");
 
   this.container  = container;
   this.renderer   = new THREE.WebGLRenderer({ antialias : true });
@@ -105,7 +106,7 @@ Clip.prototype.size = function () {
 }
 
 Clip.prototype.enableShadow = function(){
-  this.renderer.shadowMapEnabled = true;
+  this.renderer.shadowMap.enabled = true;
   this.scene.children.forEach( function( obj ) {
     if ( obj.isLight ) {
       obj.castShadow = true;
