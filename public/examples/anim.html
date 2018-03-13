@@ -7,16 +7,20 @@
 <body>
   <script src="../vendor/jquery-3.3.1.min.js"></script>
   <script src="../js/hmi3d.js"></script>
+  <a href="/blends/anim.blend" download> 
+    Download blend file
+  </a>
+  <div id="container">
+  </div>
   <script>
     $(function () {
       HMI3DRenderer.render(
-        "../models/anim0.json",
+        "../models/anim.json",
         document.getElementById("container")
       );
     })
   </script>
-  <div id="container">
-  </div>
+
 </body>
 
 </html>

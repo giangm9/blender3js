@@ -8,6 +8,9 @@ div#container {
   height: 100%;
 }
 
+a {
+  font-family: monospace;
+}
 html, body {
   border: none;
   display: block;

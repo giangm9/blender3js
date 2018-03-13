@@ -1,7 +1,7 @@
 BLENDER_VER := 2.79
 ADDONS_DIR := ~/.config/blender/$(BLENDER_VER)/scripts/addons
-EXPORT_FILE := vase.blend
-BLENDER_EXECUTE := ~/blender279a/blender
+EXPORT_FILE := anim.blend
+BLENDER_EXECUTE := blender279a
 
 init-ubuntu:
 	sudo apt install blender
@@ -16,8 +16,8 @@ build:
 test:
 	webpack-dev-server
 export:
-	$(BLENDER_EXECUTE) --background exporter/tests/blend/$(EXPORT_FILE) --python exporter/tests/test.py
-	#$(BLENDER_EXECUTE) exporter/tests/blend/$(EXPORT_FILE) --python exporter/tests/test.py
+	$(BLENDER_EXECUTE) --background blends/$(EXPORT_FILE) --python exporter/test.py
+	#$(BLENDER_EXECUTE) blends/$(EXPORT_FILE) --python exporter/tests/test.py
 
 install-exporter:
 	mkdir -p $(ADDONS_DIR)

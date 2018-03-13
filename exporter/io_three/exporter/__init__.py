@@ -36,7 +36,6 @@ def _error_handler(func):
 @_error_handler
 def export_scene(filepath, options):
     selected = []
-
     # during scene exports unselect everything. this is needed for
     # applying modifiers, if it is necessary
     # record the selected nodes so that selection is restored later
