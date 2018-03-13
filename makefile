@@ -3,18 +3,22 @@ ADDONS_DIR := ~/.config/blender/$(BLENDER_VER)/scripts/addons
 EXPORT_FILE := anim.blend
 BLENDER_EXECUTE := blender279a
 
-init-ubuntu:
+init-ubuntu: 
 	sudo apt install blender
-	sudo npm i -g webpack-cli webpack-dev-server
+
 
 init-archlinux:
-	sudo apt install blender
-	sudo npm i -g webpack-cli webpack-dev-server
+	sudo pacman -S blender
+
+
+init-npm:
+	#sudo npm i -g webpack-cli webpack-dev-server
+	npm i -D webpack@3.11.0 webpack-merge 
 
 build:
-	webpack
+	webpack --config webpack.prod.js
 test:
-	webpack-dev-server
+	webpack-dev-server --config webpack.dev.js
 export:
 	$(BLENDER_EXECUTE) --background blends/$(EXPORT_FILE) --python exporter/test.py
 	#$(BLENDER_EXECUTE) blends/$(EXPORT_FILE) --python exporter/tests/test.py
