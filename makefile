@@ -26,3 +26,6 @@ install-exporter:
 	rm -rf $(ADDONS_DIR)/io_three
 	ln -s `pwd`/exporter/io_three $(ADDONS_DIR)
 	ln -s `pwd`/exporter/hmi_exporter $(ADDONS_DIR)
+
+clean:
+	 rm -rf blends/*.blend1
