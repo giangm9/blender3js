@@ -32,7 +32,7 @@ full = {
     constants.INDENT: True,
     constants.EXPORT_TEXTURES: True,
     constants.EMBED_TEXTURES: False,
-    constants.TEXTURE_FOLDER: 'tests/blend/textures',
+    constants.TEXTURE_FOLDER: 'blends/textures',
     constants.SCENE: True,
     # constants.EMBED_GEOMETRY: properties.option_embed_geometry,
     constants.LIGHTS: True,
