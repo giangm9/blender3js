@@ -6,14 +6,11 @@ BLENDER_EXECUTE := blender279a
 init-ubuntu: 
 	sudo apt install blender
 
-
 init-archlinux:
 	sudo pacman -S blender
 
-
 init-npm:
-	#sudo npm i -g webpack-cli webpack-dev-server
-	npm i -D webpack@3.11.0 webpack-merge 
+	sudo npm i -g webpack-cli webpack-dev-server
 
 build:
 	webpack --config webpack.prod.js
