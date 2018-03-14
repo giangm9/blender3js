@@ -1,6 +1,6 @@
 BLENDER_VER := 2.79
 ADDONS_DIR := ~/.config/blender/$(BLENDER_VER)/scripts/addons
-EXPORT_FILE := anim.blend
+EXPORT_FILE := monkey.blend
 BLENDER_EXECUTE := blender279a
 
 init-ubuntu: 
@@ -14,8 +14,10 @@ init-npm:
 
 build:
 	webpack --config webpack.prod.js
+
 test:
 	webpack-dev-server --config webpack.dev.js
+
 export:
 	$(BLENDER_EXECUTE) --background blends/$(EXPORT_FILE) --python exporter/test.py
 	#$(BLENDER_EXECUTE) blends/$(EXPORT_FILE) --python exporter/tests/test.py

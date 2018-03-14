@@ -27,7 +27,7 @@ full = {
     constants.ENABLE_PRECISION: True,
     constants.PRECISION: constants.DEFAULT_PRECISION,
     constants.CUSTOM_PROPERTIES: True,
-    constants.LOGGING: constants.DISABLED,
+    constants.LOGGING: constants.INFO,
     constants.COMPRESSION: None,
     constants.INDENT: True,
     constants.EXPORT_TEXTURES: True,

@@ -36,7 +36,8 @@ def init(filename, level=constants.DEBUG):
         stream = logging.StreamHandler()
         stream.setLevel(LEVELS[level])
 
-        format_ = '%(asctime)s - %(name)s - %(levelname)s: %(message)s'
+#        format_ = '%(pathname)s:%(lineno)d %(asctime)s - %(name)s - %(levelname)s: %(message)s'
+        format_ = '%(levelname)s: %(message)s'
         formatter = logging.Formatter(format_)
 
         stream.setFormatter(formatter)

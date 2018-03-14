@@ -1,0 +1,9 @@
+blender279a --background blends/monkey.blend --python exporter/test.py
+Exporting :  Cube
+Log: /tmp/io_three.export.log
+Read prefs: /home/gl/.config/blender/2.79/config/userpref.blend
+found bundled python: /home/gl/tools/blender-2.79a-linux-glibc219-x86_64/2.79/python
+Read blend: /home/gl/projs/blender3js/blends/monkey.blend
+
+Blender quit
+#blender279a blends/monkey.blend --python exporter/tests/test.py

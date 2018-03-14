@@ -9,7 +9,7 @@ function Helpers( scene ){
   this.scene = scene;
   this.addGrid();
   this.addAxes();
-//  this.addWireFrame();
+  this.addWireFrame();
 }
 
 Helpers.prototype.addGrid = function(){

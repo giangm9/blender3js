@@ -7,10 +7,10 @@ import Load       from './BlendLoader.js';
 import Helpers    from './Helpers.js';
 import Anims      from './Anims.js';
 import './OrbitControls.js';
+import './GLTFLoader.js';
 
 const CONTROL_MIN_DISTANCE = 10;
 const CONTROL_MAX_DISTANCE = 50;
-
 
 /**
  * 
@@ -19,7 +19,6 @@ const CONTROL_MAX_DISTANCE = 50;
  * @param {function()} callback: callback function when load success
  */
 function Clip( url, container, callback ){
-  console.log("Clip");
 
   this.container  = container;
   this.renderer   = new THREE.WebGLRenderer({ antialias : true });
@@ -39,7 +38,8 @@ function Clip( url, container, callback ){
   width = this.size().width;
   height = this.size().height;
 
-  this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  //this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.25, 1000 );
   controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 
   this.container.appendChild(this.renderer.domElement);
@@ -48,20 +48,19 @@ function Clip( url, container, callback ){
   controls.minDistance = CONTROL_MIN_DISTANCE;
   controls.maxDistance = CONTROL_MAX_DISTANCE;
 
-
   Load(url, function( scene ) {
-    this.scene = scene;
-    this.anims = new Anims( scene );
-    this.clock = new THREE.Clock();
-    this.state = 'idle';
-    this.time  = 0;
-    this.loop  = false;
+    this.scene  = scene;
+    this.anims  = new Anims( scene );
+    this.clock  = new THREE.Clock();
+    this.state  = 'idle';
+    this.time   = 0;
+    this.loop   = false;
     this.helper = new Helpers( scene );
 
     global.scene = this.scene;
 
     this.scene.background = new THREE.Color( 0xaaaadf );
-    this.enableShadow();
+    //this.enableShadow();
     controls.reset();
 
     this.animate();
@@ -91,19 +90,13 @@ Clip.prototype.updateAnimation = function(delta){
 }
 
 Clip.prototype.animate = function () {
-  var size = this.size();
+  var width  = this.container.clientWidth;
+  var height = this.container.clientHeight;
   requestAnimationFrame(this.animate.bind(this));
-  this.renderer.setSize(size.width, size.height);
+  this.renderer.setSize(width, height);
   this.renderer.render(this.scene, this.camera);
   this.updateAnimation(this.clock.getDelta());
 };
-
-Clip.prototype.size = function () {
-  return {
-    width: this.container.clientWidth,
-    height: this.container.clientHeight
-  }
-}
 
 Clip.prototype.enableShadow = function(){
   this.renderer.shadowMap.enabled = true;
