@@ -5,7 +5,7 @@ import './GLTFLoader.js';
 
 
 const CONTROL_MIN_DISTANCE = 1;
-const CONTROL_MAX_DISTANCE = 50;
+const CONTROL_MAX_DISTANCE = 10; 
 
 function GLTFClip( url, container, callback ) {
   this.container  = container;
@@ -25,7 +25,7 @@ function GLTFClip( url, container, callback ) {
   this.renderer.context.getShaderInfoLog = function () { return '' };
   width  = this.container.clientWidth;
   height = this.container.clientHeight;
-  this.camera   = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.25, 10000 );
+  this.camera   = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 1000000 );
   this.controls = new THREE.OrbitControls( this.camera );
   this.controls.target.set( 0, 0, 0 );
   this.controls.maxPolarAngle = Math.PI * 0.5;
@@ -51,13 +51,20 @@ function GLTFClip( url, container, callback ) {
         // keeps it from looping cleanly. Clip it at 3 seconds
         //        if ( sceneInfo.animationTime )
         //          animation.duration = sceneInfo.animationTime;
-//        animation.duration = 0.333;
+        //        animation.duration = 0.333;
         this.mixer.clipAction( animation ).play();
       }
 
     }
     //    this.scene = gltf.scene;
+    var scale =1;// 0.04
+    gltf.scene.scale.x = scale;
+    gltf.scene.scale.y = scale;
+    gltf.scene.scale.z = scale;
+    console.log(gltf);
+
     this.scene.add(gltf.scene);
+
     this.scene.background = new THREE.Color( 0xaaaadf );
     this.helper = new Helpers( this.scene );
     var light = null;
@@ -68,7 +75,12 @@ function GLTFClip( url, container, callback ) {
     light.position.set( -10, 6, -10 );
     this.scene.add( light );
     this.animate();
-  }.bind(this) );
+  }.bind(this) ,
+    undefined,
+    function ( error ){
+      console.log( error );
+    }
+  );
 
   this.renderer.setPixelRatio( window.devicePixelRatio );
   this.renderer.setSize( window.innerWidth, window.innerHeight );
@@ -81,7 +93,7 @@ GLTFClip.prototype.animate = function () {
   requestAnimationFrame(this.animate.bind(this));
   this.renderer.setSize(width, height);
   this.renderer.render(this.scene, this.camera);
-  if (this.mixer) this.mixer.update(this.clock.getDelta());
+  if (this.mixer) this.mixer.update(this.clock.getDelta() ) ;
   //  this.updateAnimation(this.clock.getDelta());
 };
 
