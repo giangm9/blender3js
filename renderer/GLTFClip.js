@@ -4,8 +4,8 @@ import './OrbitControls.js';
 import './GLTFLoader.js';
 
 
-const CONTROL_MIN_DISTANCE = 1;
-const CONTROL_MAX_DISTANCE = 10; 
+const CONTROL_MIN_DISTANCE = 10;
+const CONTROL_MAX_DISTANCE = 1000; 
 
 function GLTFClip( url, container, callback ) {
   this.container  = container;
@@ -57,7 +57,7 @@ function GLTFClip( url, container, callback ) {
 
     }
     //    this.scene = gltf.scene;
-    var scale =1;// 0.04
+    var scale = 10;// 0.04
     gltf.scene.scale.x = scale;
     gltf.scene.scale.y = scale;
     gltf.scene.scale.z = scale;
@@ -93,7 +93,7 @@ GLTFClip.prototype.animate = function () {
   requestAnimationFrame(this.animate.bind(this));
   this.renderer.setSize(width, height);
   this.renderer.render(this.scene, this.camera);
-  if (this.mixer) this.mixer.update(this.clock.getDelta() ) ;
+  if (this.mixer) this.mixer.update(this.clock.getDelta() * 3 ) ;
   //  this.updateAnimation(this.clock.getDelta());
 };
 
